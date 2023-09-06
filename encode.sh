@@ -34,8 +34,8 @@ ktx create --layers 8 --encode uastc --zstd 18 --format R8G8B8_SRGB --assign-oet
 ktx create --layers 8 --encode basis-lz --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/slice_*.png ktx2/3d_etc1s.ktx2
 ktx create --layers 8 --format R8G8B8A8_SRGB --zstd 18 --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/slice_*.png ktx2/3d_rgba8.ktx2
 ktx create --layers 8 --format R8G8B8A8_UNORM --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/png/slice_*.png ktx2/3d_rgba8_linear.ktx2
-ktx create --layers 8 --format R16G16B16A16_SFLOAT --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f16.exr ktx2/3d_rgba16_linear.ktx2
-ktx create --layers 8 --format R32G32B32A32_SFLOAT --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f32.exr ktx2/3d_rgba32_linear.ktx2
+ktx create --layers 8 --format R16G16B16A16_SFLOAT --zstd 18 --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f16.exr ktx2/3d_rgba16_linear.ktx2
+ktx create --layers 8 --format R32G32B32A32_SFLOAT --zstd 18 --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f32.exr ktx2/3d_rgba32_linear.ktx2
 
 # Cubemap
 echo -e "${GREEN}Creating cubemaps…${RESET}"
@@ -52,7 +52,7 @@ ktx create --layers 8 --encode uastc --zstd 18 --format R8G8B8_SRGB --assign-oet
 ktx create --layers 8 --encode basis-lz --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/slice_*.png ktx2/array_etc1s.ktx2
 ktx create --layers 8 --format R8G8B8A8_SRGB --zstd 18 --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/slice_*.png ktx2/array_rgba8.ktx2
 ktx create --layers 8 --format R8G8B8A8_UNORM --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/png/slice_*.png ktx2/array_rgba8_linear.ktx2
-ktx create --layers 8 --format R16G16B16A16_SFLOAT --zstd 18 --convert-oetf linear --assign-primaries bt709 --generate-mipmap source/exr/slice_*_f16.exr ktx2/array_rgba16_linear.ktx2
-ktx create --layers 8 --format R32G32B32A32_SFLOAT --zstd 18 --convert-oetf linear --assign-primaries bt709 --generate-mipmap source/exr/slice_*_f32.exr ktx2/array_rgba32_linear.ktx2
+ktx create --layers 8 --format R16G16B16A16_SFLOAT --zstd 18 --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f16.exr ktx2/array_rgba16_linear.ktx2
+ktx create --layers 8 --format R32G32B32A32_SFLOAT --zstd 18 --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/exr/slice_*_f32.exr ktx2/array_rgba32_linear.ktx2
 
 echo -e "${GREEN}… done! 🍻${RESET}"
