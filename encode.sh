@@ -3,18 +3,6 @@
 RESET='\033[0m'
 GREEN='\033[0;32m'
 
-# Pre-process
-echo -e "${GREEN}Pre-processing source images…${RESET}"
-convert source/png/2d_rgb8.png png32:source/png/2d_rgba8.png
-convert source/png/slice_01.png png32:source/png/slice_01.png
-convert source/png/slice_02.png png32:source/png/slice_02.png
-convert source/png/slice_03.png png32:source/png/slice_03.png
-convert source/png/slice_04.png png32:source/png/slice_04.png
-convert source/png/slice_05.png png32:source/png/slice_05.png
-convert source/png/slice_06.png png32:source/png/slice_06.png
-convert source/png/slice_07.png png32:source/png/slice_07.png
-convert source/png/slice_08.png png32:source/png/slice_08.png
-
 rm ktx2/*.ktx2
 
 # 2D
@@ -23,7 +11,7 @@ ktx create --encode uastc --zstd 18 --format R8G8B8_SRGB --assign-oetf srgb --as
 ktx create --encode basis-lz --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/2d_etc1s.png ktx2/2d_etc1s.ktx2
 ktx create --format R8G8B8A8_SRGB --zstd 18 --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/png/2d_rgba8.png ktx2/2d_rgba8.ktx2
 ktx create --format R8G8B8A8_UNORM --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/png/2d_rgba8.png ktx2/2d_rgba8_linear.ktx2
-# ktx create --format R8G8B8A8_SRGB --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-primaries displayp3 --generate-mipmap source/png/2d_rgba8.png ktx2/2d_rgba8_displayp3.ktx2
+ktx create --format R8G8B8A8_SRGB --zstd 18 --assign-oetf srgb --assign-primaries bt709 --convert-primaries displayp3 --generate-mipmap source/png/2d_rgba8.png ktx2/2d_rgba8_displayp3.ktx2
 ktx create --format R16G16B16A16_SFLOAT --zstd 18 --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/exr/2d_f16.exr ktx2/2d_rgba16_linear.ktx2
 ktx create --format R32G32B32A32_SFLOAT --zstd 18 --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/exr/2d_f32.exr ktx2/2d_rgba32_linear.ktx2
 # toktx --encode astc --zcmp 18 --assign_oetf srgb --genmipmap ktx2/2d_astc_6x6.ktx2 source/png/2d_astc_6x6.png
