@@ -12,6 +12,11 @@ oiiotool source/rgba32.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d
 oiiotool source/slice@@.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d half -o source/slice@@_f16.exr
 oiiotool source/slice@@.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d float -o source/slice@@_f32.exr
 
+# Utilities
+echo -e "${GREEN}Creating utility textures…${RESET}"
+ktx create --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/fail_load.png ktx2/fail_load.ktx2
+ktx create --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/fail_gpu.png ktx2/fail_gpu.ktx2
+
 # GPU formats
 echo -e "${GREEN}Creating GPU format textures…${RESET}"
 ktx create --encode uastc --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/astc4x4.png - | ktx transcode --target astc - ./ktx2/2d_astc4x4.ktx2
