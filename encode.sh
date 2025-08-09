@@ -9,6 +9,8 @@ rm ktx2/*.ktx2
 echo -e "${GREEN}Creating EXR sources…${RESET}"
 oiiotool source/rgba16.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d half -o source/rgba16.exr
 oiiotool source/rgba32.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d float -o source/rgba32.exr
+oiiotool source/r11g11b10.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d half -o source/r11g11b10.exr
+oiiotool source/rgb9e5.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d half -o source/rgb9e5.exr
 oiiotool source/slice@@.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d half -o source/slice@@_f16.exr
 oiiotool source/slice@@.png --iscolorspace srgb --tocolorspace lin_rec709_srgb -d float -o source/slice@@_f32.exr
 
@@ -36,6 +38,8 @@ ktx create --format R8G8B8A8_UNORM --assign-oetf srgb --assign-primaries bt709 -
 ktx create --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --convert-primaries displayp3 --generate-mipmap source/rgba8.png ktx2/2d_rgba8_displayp3.ktx2
 ktx create --format R16G16B16A16_SFLOAT --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/rgba16.exr ktx2/2d_rgba16_linear.ktx2
 ktx create --format R32G32B32A32_SFLOAT --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/rgba32.exr ktx2/2d_rgba32_linear.ktx2
+ktx create --format B10G11R11_UFLOAT_PACK32 --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/r11g11b10.exr ktx2/2d_r11g11b10_linear.ktx2
+ktx create --format E5B9G9R9_UFLOAT_PACK32 --assign-oetf linear --assign-primaries bt709 --generate-mipmap source/rgb9e5.exr ktx2/2d_rgb9e5_linear.ktx2
 
 # 3D
 echo -e "${GREEN}Creating 3D textures…${RESET}"
