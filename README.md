@@ -10,6 +10,8 @@ Collection of KTX2 sample textures, for testing and debugging.
 
 | img | vkFormat | colorspaces |
 |-----|----------|------------|
+| ![rgb8](source/rgb8.png) | `R8G8B8_SRGB` | `"srgb", "display-p3"`  |
+| ![rgb8](source/rgb8.png) | `R8G8B8_UNORM` | `"srgb-linear"` |
 | ![rgba8](source/rgba8.png) | `R8G8B8A8_SRGB` | `"srgb", "display-p3"`  |
 | ![rgba8](source/rgba8.png) | `R8G8B8A8_UNORM` | `"srgb-linear"` |
 | ![rgba16](source/rgba16.png) | `R16G16B16A16_SFLOAT` | `"srgb-linear"` |

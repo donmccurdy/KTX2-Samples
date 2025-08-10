@@ -33,6 +33,9 @@ ktx create --encode uastc --format R8G8B8_SRGB --assign-oetf srgb --assign-prima
 echo -e "${GREEN}Creating 2D textures…${RESET}"
 ktx create --encode uastc --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/basis_uastc.png ktx2/2d_uastc.ktx2
 ktx create --encode basis-lz --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/basis_etc1s.png ktx2/2d_etc1s.ktx2
+ktx create --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/rgb8.png ktx2/2d_rgb8.ktx2
+ktx create --format R8G8B8_UNORM --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/rgb8.png ktx2/2d_rgb8_linear.ktx2
+ktx create --format R8G8B8_SRGB --assign-oetf srgb --assign-primaries bt709 --convert-primaries displayp3 --generate-mipmap source/rgb8.png ktx2/2d_rgb8_displayp3.ktx2
 ktx create --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --generate-mipmap source/rgba8.png ktx2/2d_rgba8.ktx2
 ktx create --format R8G8B8A8_UNORM --assign-oetf srgb --assign-primaries bt709 --convert-oetf linear --generate-mipmap source/rgba8.png ktx2/2d_rgba8_linear.ktx2
 ktx create --format R8G8B8A8_SRGB --assign-oetf srgb --assign-primaries bt709 --convert-primaries displayp3 --generate-mipmap source/rgba8.png ktx2/2d_rgba8_displayp3.ktx2
