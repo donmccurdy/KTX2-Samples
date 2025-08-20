@@ -37,6 +37,8 @@ Collection of KTX2 sample textures, for testing and debugging.
 |-----|----------|-------|------------------|-------------|
 | ![basis_etc1s](source/basis_etc1s.png) | – | `KHR_DF_MODEL_ETC1S` | `KTX_SS_BASIS_LZ` | `"srgb"`  |
 | ![basis_uastc](source/basis_uastc.png) | – | `KHR_DF_MODEL_UASTC` | – | `"srgb"` |
+| ![basis_uastc_hdr4x4](source/basis_uastc_hdr4x4.png) | `ASTC_4x4_SFLOAT_BLOCK_EXT` | `UASTC_HDR_4X4` | – | `"linear"` |
+| ![basis_uastc_hdr6x6](source/basis_uastc_hdr6x6.png) | `ASTC_6x6_SFLOAT_BLOCK_EXT` | `ASTC` | – | `"linear"` |
 
 ### 3D
 
